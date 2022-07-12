@@ -6,5 +6,5 @@ import lombok.Data;
 public class BinanceApiError {
 
     private int code;
-    private String message;
+    private String msg;
 }

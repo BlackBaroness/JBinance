@@ -75,6 +75,12 @@
             <version>23.0.0</version>
             <scope>provided</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.checkerframework/checker-qual -->
+        <dependency>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker-qual</artifactId>
+            <version>3.22.2</version>
+        </dependency>
         <!--=======================-->
     </dependencies>
 

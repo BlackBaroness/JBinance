@@ -16,6 +16,10 @@ public interface StakingBinanceService {
     @GET("/sapi/v1/staking/productList")
     Call<List<StakingProduct>> getStakingProducts(
             @Query("product") StakingProductType productType,
-            @Query("timestamp") Long timestamp
+            @Query("asset") String asset,
+            @Query("current") long page,
+            @Query("size") long size,
+            @Query("recvWindow") long recvWindow,
+            @Query("timestamp") long timestamp
     );
 }
