@@ -1,12 +1,12 @@
 package com.github.blackbaroness.jbinance.client.staking;
 
 import com.github.blackbaroness.jbinance.client.BinanceApiServiceGenerator;
-import com.github.blackbaroness.jbinance.client.staking.data.StakingProduct;
-import com.github.blackbaroness.jbinance.client.staking.data.StakingProductType;
-import com.github.blackbaroness.jbinance.client.staking.request.GetStakingProductsBuilder;
+import com.github.blackbaroness.jbinance.client.staking.position.request.GetStakingPositionsBuilder;
+import com.github.blackbaroness.jbinance.client.staking.product.StakingProduct;
+import com.github.blackbaroness.jbinance.client.staking.product.StakingProductType;
+import com.github.blackbaroness.jbinance.client.staking.product.request.GetStakingProductsBuilder;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
-import retrofit2.Call;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,8 +53,8 @@ public class BlockingStakingBinanceClient {
         return getAllProducts(productType, builder -> builder);
     }
 
-    @Contract(pure = true)
-    private <T> T execute(@NotNull Call<T> call) {
-        return BinanceApiServiceGenerator.executeSync(call);
+    @Contract(value = "_ -> new", pure = true)
+    public @NotNull GetStakingPositionsBuilder getPositions(@NotNull StakingProductType productType) {
+        return new GetStakingPositionsBuilder(stakingBinanceService, productType);
     }
 }

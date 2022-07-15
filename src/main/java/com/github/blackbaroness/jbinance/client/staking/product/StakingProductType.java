@@ -1,4 +1,4 @@
-package com.github.blackbaroness.jbinance.client.staking.data;
+package com.github.blackbaroness.jbinance.client.staking.product;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

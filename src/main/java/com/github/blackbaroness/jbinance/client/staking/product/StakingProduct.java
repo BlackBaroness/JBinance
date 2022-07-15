@@ -1,4 +1,4 @@
-package com.github.blackbaroness.jbinance.client.staking.data;
+package com.github.blackbaroness.jbinance.client.staking.product;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -11,11 +11,14 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class StakingProductQuota {
+public class StakingProduct {
 
-    @JsonProperty("totalPersonalQuota")
-    String totalPersonalQuota;
+    @JsonProperty("projectId")
+    String productId;
 
-    @JsonProperty("minimum")
-    String minimumOrder;
+    @JsonProperty("detail")
+    StakingProductDetail detail;
+
+    @JsonProperty("quota")
+    StakingProductQuota quota;
 }
